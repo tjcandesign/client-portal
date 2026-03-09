@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🍷 Wine Bus — April 11, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --grape: #6B2FA0;
+  --grape-deep: #4A1D73;
+  --grape-light: #9B59D0;
+  --lilac: #C084FC;
+  --lavender: #E9D5FF;
+  --lavender-soft: #F3E8FF;
+  --blush: #FBBF24;
+  --peach: #FB923C;
+  --hot-pink: #EC4899;
+  --magenta: #D946EF;
+  --mint: #34D399;
+  --sky: #38BDF8;
+  --cream: #FFFBF5;
+  --off-white: #FAF5FF;
+  --text: #1E1030;
+  --text-mid: #5B4A6F;
+  --text-light: #8B7BA0;
+  --card-bg: rgba(255,255,255,0.85);
+  --glass: rgba(255,255,255,0.6);
+  --r1: 20px;
+  --r2: 14px;
+  --shadow-sm: 0 2px 8px rgba(107,47,160,0.08);
+  --shadow-md: 0 4px 20px rgba(107,47,160,0.1);
+  --shadow-lg: 0 12px 40px rgba(107,47,160,0.14);
+  --shadow-glow: 0 0 40px rgba(192,132,252,0.2);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',-apple-system,sans-serif;
+  background:var(--off-white);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* === HERO === */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#1a0533 0%,#2d1055 25%,var(--grape-deep) 50%,#6B2FA0 75%,#9333EA 100%);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 30%, rgba(236,72,153,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 60%, rgba(192,132,252,0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 80%, rgba(251,191,36,0.15) 0%, transparent 70%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='50' cy='50' r='1' fill='white' opacity='.15'/%3E%3Ccircle cx='10' cy='20' r='.5' fill='white' opacity='.1'/%3E%3Ccircle cx='80' cy='30' r='.7' fill='white' opacity='.08'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23s)'/%3E%3C/svg%3E");
+}
+/* Floating shapes */
+.float-shape{position:absolute;border-radius:50%;filter:blur(1px);opacity:0.12;animation:floaty 20s ease-in-out infinite;}
+.fs1{width:300px;height:300px;background:var(--hot-pink);top:-50px;left:-80px;animation-delay:0s;}
+.fs2{width:200px;height:200px;background:var(--lilac);top:30%;right:-60px;animation-delay:-5s;}
+.fs3{width:150px;height:150px;background:var(--blush);bottom:10%;left:20%;animation-delay:-10s;}
+.fs4{width:180px;height:180px;background:var(--magenta);bottom:-40px;right:15%;animation-delay:-15s;border-radius:30%;}
+@keyframes floaty{
+  0%,100%{transform:translate(0,0) rotate(0deg);}
+  25%{transform:translate(20px,-30px) rotate(5deg);}
+  50%{transform:translate(-15px,20px) rotate(-3deg);}
+  75%{transform:translate(25px,15px) rotate(4deg);}
+}
+
+.hero-content{
+  position:relative;z-index:2;text-align:center;padding:40px 24px;
+  max-width:680px;
+}
+.hero-badge{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:6px 20px;
+  border-radius:100px;
+  font-size:0.78rem;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.9);
+  margin-bottom:28px;
+}
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3rem,8vw,5.5rem);
+  font-weight:800;
+  color:white;
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  margin-bottom:20px;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--blush),var(--hot-pink),var(--lilac));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-date{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.3rem;
+  font-weight:500;
+  color:rgba(255,255,255,0.85);
+  margin-bottom:8px;
+}
+.hero-loc{
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:36px;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:white;color:var(--grape);
+  padding:14px 32px;border-radius:100px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;font-size:0.95rem;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
+  transition:all 0.3s;cursor:pointer;border:none;
+}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3);}
+.hero-scroll{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,0.4);font-size:0.75rem;letter-spacing:0.1em;
+  text-transform:uppercase;z-index:2;
+  animation:bounce 2s ease-in-out infinite;
+}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+/* === NAV === */
+.nav-wrap{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,245,255,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(107,47,160,0.08);
+}
+.nav{
+  max-width:960px;margin:0 auto;
+  display:flex;overflow-x:auto;
+  scrollbar-width:none;padding:0 8px;
+}
+.nav::-webkit-scrollbar{display:none;}
+.nav-btn{
+  flex:none;padding:16px 18px;
+  background:none;border:none;
+  border-bottom:3px solid transparent;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.82rem;font-weight:500;
+  color:var(--text-light);cursor:pointer;
+  white-space:nowrap;transition:all 0.2s;
+  letter-spacing:0.02em;
+}
+.nav-btn:hover{color:var(--grape);background:rgba(107,47,160,0.04);}
+.nav-btn.active{
+  color:var(--grape);border-bottom-color:var(--grape);font-weight:600;
+}
+
+/* === MAIN === */
+.main{max-width:960px;margin:0 auto;padding:40px 20px 100px;}
+
+.section{display:none;animation:slideUp 0.4s ease;}
+.section.active{display:block;}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+.sec-header{margin-bottom:32px;}
+.sec-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.6rem,4vw,2.2rem);
+  font-weight:700;color:var(--grape-deep);
+  letter-spacing:-0.02em;
+  margin-bottom:6px;
+}
+.sec-sub{font-size:0.92rem;color:var(--text-mid);}
+
+/* === CARDS === */
+.card{
+  background:var(--card-bg);
+  backdrop-filter:blur(10px);
+  border-radius:var(--r1);
+  box-shadow:var(--shadow-md);
+  border:1px solid rgba(107,47,160,0.06);
+  padding:28px;
+  margin-bottom:20px;
+  transition:all 0.25s;
+}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+
+/* === OVERVIEW GRID === */
+.overview-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;margin-bottom:28px;
+}
+.ov-card{
+  background:var(--card-bg);
+  backdrop-filter:blur(10px);
+  border-radius:var(--r2);
+  padding:20px;
+  border:1px solid rgba(107,47,160,0.06);
+  box-shadow:var(--shadow-sm);
+  transition:all 0.2s;
+  position:relative;overflow:hidden;
+}
+.ov-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--grape),var(--lilac),var(--hot-pink));
+  border-radius:var(--r2) var(--r2) 0 0;
+}
+.ov-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.ov-emoji{font-size:28px;margin-bottom:8px;display:block;}
+.ov-label{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.68rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--grape);margin-bottom:4px;
+}
+.ov-value{font-size:0.95rem;font-weight:500;line-height:1.4;}
+.ov-note{font-size:0.78rem;color:var(--text-light);margin-top:4px;}
+
+/* === CALLOUTS === */
+.callout{
+  border-radius:var(--r2);
+  padding:18px 22px;
+  margin:20px 0;
+  font-size:0.9rem;
+  line-height:1.5;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.callout-icon{font-size:24px;flex:none;margin-top:-2px;}
+.callout.purple{background:var(--lavender-soft);border:1px solid var(--lavender);}
+.callout.gold{background:#FFFBEB;border:1px solid #FDE68A;}
+.callout.pink{background:#FFF1F2;border:1px solid #FECDD3;}
+.callout strong{color:var(--grape-deep);}
+
+/* === TIMELINE === */
+.tl{position:relative;padding-left:40px;}
+.tl::before{
+  content:'';position:absolute;left:15px;top:12px;bottom:12px;width:2px;
+  background:linear-gradient(to bottom,var(--grape),var(--lilac),var(--hot-pink),var(--blush));
+  border-radius:2px;
+}
+.tl-item{position:relative;padding-bottom:28px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{
+  position:absolute;left:-31px;top:6px;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--grape);
+  border:3px solid var(--off-white);
+  box-shadow:0 0 0 2px var(--grape),0 0 12px rgba(107,47,160,0.2);
+}
+.tl-item.meal .tl-dot{background:var(--blush);box-shadow:0 0 0 2px var(--blush),0 0 12px rgba(251,191,36,0.3);}
+.tl-item.travel .tl-dot{background:var(--hot-pink);box-shadow:0 0 0 2px var(--hot-pink),0 0 12px rgba(236,72,153,0.2);}
+.tl-time{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.72rem;font-weight:600;
+  color:var(--grape);text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.tl-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.02rem;margin:2px 0;}
+.tl-desc{font-size:0.85rem;color:var(--text-mid);line-height:1.5;}
+
+/* === WINERY CARDS === */
+.winery{
+  border-radius:var(--r1);overflow:hidden;
+  box-shadow:var(--shadow-md);
+  margin-bottom:24px;
+  background:var(--card-bg);
+  border:1px solid rgba(107,47,160,0.06);
+  transition:all 0.25s;
+}
+.winery:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+.winery-head{
+  padding:22px 28px;color:white;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+}
+.winery-head.primary{background:linear-gradient(135deg,#4A1D73,#6B2FA0,#9333EA);}
+.winery-head.secondary{background:linear-gradient(135deg,#831843,#9D174D,#DB2777);}
+.winery-head.tertiary{background:linear-gradient(135deg,#78350F,#92400E,#D97706);}
+.winery-name{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;}
+.winery-badge{
+  padding:5px 14px;border-radius:100px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.08em;
+  background:rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,0.2);
+}
+.winery-body{padding:24px 28px;}
+.winery-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.pill{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:4px 14px;border-radius:100px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.72rem;font-weight:600;
+}
+.pill.grape{background:var(--lavender-soft);color:var(--grape);}
+.pill.green{background:#ECFDF5;color:#065F46;}
+.pill.gold{background:#FFFBEB;color:#92400E;}
+.pill.pink{background:#FFF1F2;color:#9F1239;}
+.w-row{display:grid;grid-template-columns:110px 1fr;gap:8px;margin-bottom:10px;}
+.w-label{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.06em;
+  color:var(--grape);padding-top:2px;
+}
+.w-val{font-size:0.88rem;color:var(--text);}
+.w-val a{color:var(--grape);text-decoration:none;font-weight:500;}
+.w-val a:hover{text-decoration:underline;}
+
+/* === BUS CARDS === */
+.bus-group-title{
+  font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;
+  color:var(--grape-deep);margin:28px 0 6px;
+}
+.bus-group-sub{font-size:0.85rem;color:var(--text-mid);margin-bottom:16px;}
+.bus{
+  background:var(--card-bg);border-radius:var(--r2);
+  box-shadow:var(--shadow-sm);border:1px solid rgba(107,47,160,0.06);
+  padding:22px 24px;margin-bottom:12px;
+  transition:all 0.2s;
+}
+.bus:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.bus-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.bus-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--grape-deep);}
+.bus-rec{
+  background:linear-gradient(135deg,var(--grape),var(--hot-pink));
+  color:white;font-size:0.65rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.08em;
+  padding:3px 10px;border-radius:100px;
+}
+.bus-desc{font-size:0.88rem;color:var(--text-mid);margin-bottom:8px;}
+.bus-price{
+  display:inline-block;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.8rem;font-weight:600;
+  color:var(--grape);
+  background:var(--lavender-soft);
+  padding:4px 14px;border-radius:8px;
+}
+
+/* === PICNIC === */
+.picnic-cat{
+  font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+  color:var(--grape);margin:22px 0 8px;
+}
+.picnic-list{list-style:none;padding:0;}
+.picnic-list li{
+  padding:7px 0 7px 30px;position:relative;
+  font-size:0.9rem;color:var(--text);
+}
+.picnic-list li::before{content:attr(data-icon);position:absolute;left:0;font-size:16px;}
+
+/* === CHECKLIST === */
+.ck-phase{
+  font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;
+  color:var(--grape-deep);margin:28px 0 12px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--lavender);
+}
+.ck-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:12px 10px;border-radius:10px;
+  cursor:pointer;transition:background 0.15s;
+  border-bottom:1px solid rgba(107,47,160,0.04);
+}
+.ck-item:hover{background:var(--lavender-soft);}
+.ck-item input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;
+  width:24px;height:24px;min-width:24px;
+  border:2px solid var(--lavender);border-radius:8px;
+  cursor:pointer;position:relative;margin-top:1px;
+  transition:all 0.2s;background:white;
+}
+.ck-item input:checked{background:linear-gradient(135deg,var(--grape),var(--lilac));border-color:var(--grape);}
+.ck-item input:checked::after{
+  content:'✓';color:white;position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:14px;font-weight:700;
+}
+.ck-item.done .ck-text{text-decoration:line-through;color:var(--text-light);}
+.ck-text{font-size:0.9rem;line-height:1.5;}
+.ck-note{font-size:0.78rem;color:var(--text-light);margin-top:2px;}
+
+/* === EXCLUDED === */
+.excluded{
+  background:var(--lavender-soft);border-radius:var(--r2);
+  padding:14px 18px;font-size:0.82rem;
+  color:var(--text-mid);font-style:italic;margin-top:20px;
+}
+
+/* === FOOTER === */
+.footer{
+  text-align:center;padding:48px 20px;
+  background:linear-gradient(160deg,#1a0533,var(--grape-deep));
+  color:rgba(255,255,255,0.6);font-size:0.8rem;
+}
+.footer-emoji{font-size:36px;display:block;margin-bottom:10px;}
+.footer-text{font-family:'Space Grotesk',sans-serif;}
+
+/* === RESPONSIVE === */
+@media(max-width:640px){
+  .hero{min-height:90vh;}
+  .hero h1{font-size:clamp(2.4rem,10vw,3.5rem);}
+  .overview-grid{grid-template-columns:1fr 1fr;}
+  .nav-btn{padding:14px 14px;font-size:0.78rem;}
+  .card,.winery-body{padding:20px;}
+  .winery-head{padding:18px 20px;}
+  .w-row{grid-template-columns:1fr;gap:2px;}
+}
+@media(max-width:400px){
+  .overview-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="float-shape fs1"></div>
+  <div class="float-shape fs2"></div>
+  <div class="float-shape fs3"></div>
+  <div class="float-shape fs4"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Girls Day Out ✨</div>
+    <h1>Wine<br><span>Bus</span></h1>
+    <div class="hero-date">Saturday, April 11, 2026</div>
+    <div class="hero-loc">Virginia Wine Country · Pickup from Melissa's</div>
+    <button class="hero-cta" onclick="document.querySelector('.nav-wrap').scrollIntoView({behavior:'smooth'})">
+      See the Plan ↓
+    </button>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav" id="nav">
+    <button class="nav-btn active" data-tab="overview">Overview</button>
+    <button class="nav-btn" data-tab="itinerary">Itinerary</button>
+    <button class="nav-btn" data-tab="wineries">Wineries</button>
+    <button class="nav-btn" data-tab="bus">Bus Options</button>
+    <button class="nav-btn" data-tab="picnic">Picnic</button>
+    <button class="nav-btn" data-tab="checklist">Checklist</button>
+  </nav>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- ===== OVERVIEW ===== -->
+<div class="section active" id="overview">
+  <div class="sec-header">
+    <h2 class="sec-title">At a Glance</h2>
+    <p class="sec-sub">Everything you need, one page, zero stress.</p>
+  </div>
+
+  <div class="overview-grid">
+    <div class="ov-card"><span class="ov-emoji">📅</span><div class="ov-label">Date</div><div class="ov-value">Saturday, April 11</div><div class="ov-note">2026</div></div>
+    <div class="ov-card"><span class="ov-emoji">👯‍♀️</span><div class="ov-label">Group Size</div><div class="ov-value">10 – 18 people</div></div>
+    <div class="ov-card"><span class="ov-emoji">📍</span><div class="ov-label">Pickup & Dropoff</div><div class="ov-value">1002 Girard St NW</div><div class="ov-note">DC 20001 · Melissa's house</div></div>
+    <div class="ov-card"><span class="ov-emoji">🚌</span><div class="ov-label">Bus Vibe</div><div class="ov-value">Full party bus</div><div class="ov-note">Stand-up, edge seating — Housewives energy</div></div>
+    <div class="ov-card"><span class="ov-emoji">⏰</span><div class="ov-label">Duration</div><div class="ov-value">~9 AM – 6:30 PM</div><div class="ov-note">Full day trip</div></div>
+    <div class="ov-card"><span class="ov-emoji">🧀</span><div class="ov-label">Food Plan</div><div class="ov-value">BYO Trader Joe's picnic</div><div class="ov-note">Cooler on the bus</div></div>
+    <div class="ov-card"><span class="ov-emoji">🍾</span><div class="ov-label">Bus Drinks</div><div class="ov-value">BYO wine & drinks</div><div class="ov-note">Pre-game on the ride</div></div>
+    <div class="ov-card"><span class="ov-emoji">🗺️</span><div class="ov-label">Route</div><div class="ov-value">2–3 winery stops</div><div class="ov-note">Fauquier & Loudoun County, VA</div></div>
+  </div>
+
+  <div class="callout pink">
+    <span class="callout-icon">🍕</span>
+    <div><strong>Pizza Night:</strong> Lee and Ellie want pizza. Plan is to do that with just the three of you on <strong>Friday night, April 10</strong> — keep the wine bus day all about wine.</div>
+  </div>
+  <div class="callout gold">
+    <span class="callout-icon">📊</span>
+    <div><strong>Send the Poll:</strong> "Are you available for a wine bus Saturday April 11?" — <strong>Yes / No / Maybe</strong>. Keep it simple.</div>
+  </div>
+</div>
+
+<!-- ===== ITINERARY ===== -->
+<div class="section" id="itinerary">
+  <div class="sec-header">
+    <h2 class="sec-title">The Day</h2>
+    <p class="sec-sub">A relaxed all-day plan with flex built in.</p>
+  </div>
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item travel"><div class="tl-dot"></div><div class="tl-time">9:00 AM</div><div class="tl-title">Depart DC</div><div class="tl-desc">Pickup at Melissa's. Load the cooler, crack something bubbly for the ride.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 – 10:15 AM</div><div class="tl-title">Arrive Three Fox Vineyards</div><div class="tl-desc">First stop — Delaplane, VA. About an hour from DC.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:15 AM – 12:00 PM</div><div class="tl-title">Tastings at Three Fox</div><div class="tl-desc">Wine flights, explore the brewery, meadow vibes along the creek.</div></div>
+      <div class="tl-item meal"><div class="tl-dot"></div><div class="tl-time">12:00 – 12:30 PM</div><div class="tl-title">Picnic Lunch</div><div class="tl-desc">Spread out in Three Fox's meadow with the Trader Joe's haul.</div></div>
+      <div class="tl-item travel"><div class="tl-dot"></div><div class="tl-time">12:45 PM</div><div class="tl-title">Roll to Winery #2</div><div class="tl-desc">~20 minute drive to Breaux Vineyards.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">1:15 – 3:00 PM</div><div class="tl-title">Breaux Vineyards</div><div class="tl-desc">Tastings + vineyard views. 404 acres of rolling countryside.</div></div>
+      <div class="tl-item travel"><div class="tl-dot"></div><div class="tl-time">3:15 PM</div><div class="tl-title">Optional: Winery #3</div><div class="tl-desc">~15 min drive if the group's feeling it.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">3:30 – 5:00 PM</div><div class="tl-title">Cana or Greenhill</div><div class="tl-desc">Optional third stop. Skip if the vibe says "head home."</div></div>
+      <div class="tl-item travel"><div class="tl-dot"></div><div class="tl-time">5:00 PM</div><div class="tl-title">Head Home</div><div class="tl-desc">Board the bus, recap the day.</div></div>
+      <div class="tl-item travel"><div class="tl-dot"></div><div class="tl-time">6:15 – 6:30 PM</div><div class="tl-title">Back in DC</div><div class="tl-desc">Dropoff at Melissa's. 🎉</div></div>
+    </div>
+  </div>
+  <div class="callout purple">
+    <span class="callout-icon">💡</span>
+    <div><strong>Flex:</strong> The third winery is totally optional. Two stops plus a picnic = a perfectly relaxed day without rushing.</div>
+  </div>
+</div>
+
+<!-- ===== WINERIES ===== -->
+<div class="section" id="wineries">
+  <div class="sec-header">
+    <h2 class="sec-title">The Wineries</h2>
+    <p class="sec-sub">Bus-friendly, group-ready, picnic-approved.</p>
+  </div>
+
+  <div class="winery">
+    <div class="winery-head primary"><div class="winery-name">Three Fox Vineyards & Brewery</div><div class="winery-badge">Stop 1 · Primary</div></div>
+    <div class="winery-body">
+      <div class="winery-tags">
+        <span class="pill green">✓ Bus-Friendly</span>
+        <span class="pill green">✓ Outside Food</span>
+        <span class="pill grape">🍺 Brewery</span>
+        <span class="pill gold">⭐ 4.7</span>
+      </div>
+      <div class="w-row"><div class="w-label">Location</div><div class="w-val">10100 Three Fox Lane, Delaplane, VA 20144</div></div>
+      <div class="w-row"><div class="w-label">Drive</div><div class="w-val">~58 min from DC</div></div>
+      <div class="w-row"><div class="w-label">Phone</div><div class="w-val"><a href="tel:7035946136">(703) 594-6136</a></div></div>
+      <div class="w-row"><div class="w-label">Saturday</div><div class="w-val">11 AM – 7 PM</div></div>
+      <div class="w-row"><div class="w-label">Vibe</div><div class="w-val">50-acre property with meadows along Crooked Run Creek. Italian varietals + craft brewery. Groups of 9+ reserve through Events Team. Food trucks often on weekends.</div></div>
+    </div>
+  </div>
+
+  <div class="winery">
+    <div class="winery-head secondary"><div class="winery-name">Breaux Vineyards</div><div class="winery-badge">Stop 2</div></div>
+    <div class="winery-body">
+      <div class="winery-tags">
+        <span class="pill green">✓ Bus-Friendly</span>
+        <span class="pill green">✓ Outside Food</span>
+        <span class="pill gold">404 Acres</span>
+      </div>
+      <div class="w-row"><div class="w-label">Location</div><div class="w-val">36888 Breaux Vineyards Ln, Purcellville, VA</div></div>
+      <div class="w-row"><div class="w-label">Drive</div><div class="w-val">~60 min from DC · ~20 min from Three Fox</div></div>
+      <div class="w-row"><div class="w-label">Phone</div><div class="w-val"><a href="tel:5406686299">(540) 668-6299</a></div></div>
+      <div class="w-row"><div class="w-label">Group Info</div><div class="w-val">$5/person for 3-hour seating block. No pre-notification for bus. Vineyard views, food trucks on weekends.</div></div>
+    </div>
+  </div>
+
+  <div class="winery">
+    <div class="winery-head tertiary"><div class="winery-name">Cana or Greenhill Vineyards</div><div class="winery-badge">Stop 3 · Optional</div></div>
+    <div class="winery-body">
+      <div class="winery-tags">
+        <span class="pill green">✓ Bus w/ Reservation</span>
+        <span class="pill green">✓ Picnic OK</span>
+      </div>
+      <div class="w-row"><div class="w-label">Area</div><div class="w-val">Delaplane / Middleburg (~15–20 min from Breaux)</div></div>
+      <div class="w-row"><div class="w-label">Highlights</div><div class="w-val"><strong>Cana:</strong> 4x Loudoun Winery of the Year. Patio + live music. <strong>Greenhill:</strong> 128-acre historic farm, outdoor picnic tables. Both allow outside food.</div></div>
+    </div>
+  </div>
+
+  <div class="excluded"><strong>Excluded per your preferences:</strong> Barrel Oak Winery and Delaplane Cellars. (Delaplane also has a "No Buses" policy.)</div>
+</div>
+
+<!-- ===== BUS ===== -->
+<div class="section" id="bus">
+  <div class="sec-header">
+    <h2 class="sec-title">Bus Options</h2>
+    <p class="sec-sub">Full-size party buses with stand-up room. Housewives approved.</p>
+  </div>
+
+  <div class="bus-group-title">Full-Service Concierge</div>
+  <div class="bus-group-sub">They plan the route, book the wineries, and drive. You just show up.</div>
+
+  <div class="bus"><div class="bus-top"><span class="bus-name">Cork & Keg Tours</span><span class="bus-rec">Recommended</span></div><div class="bus-desc">Driver + tour concierge, custom itinerary, winery reservations, karaoke, VIP treatment. Full concierge — they handle everything.</div></div>
+  <div class="bus"><div class="bus-top"><span class="bus-name">Spirited Tours</span></div><div class="bus-desc">Certified wine expert guide, exec transport, snacks, optional lunch, winery reservations. Picks up in DC.</div></div>
+  <div class="bus"><div class="bus-top"><span class="bus-name">Vineyard Voyages</span></div><div class="bus-desc">Door-to-door luxury, expert host, curated 3-stop routes. Pre-vetted routes, no rushing.</div></div>
+
+  <div class="bus-group-title">DIY — You Plan, They Drive</div>
+  <div class="bus-group-sub">You handle winery reservations; they provide the bus and driver.</div>
+
+  <div class="bus"><div class="bus-top"><span class="bus-name">Uptown Bus</span></div><div class="bus-desc">15–40 passengers, built-in bar, bathroom, BYO alcohol.</div><div class="bus-price">~$120–150/hr (4-hr min) · ~$1,400–1,750 full day</div></div>
+  <div class="bus"><div class="bus-top"><span class="bus-name">Chariots for Hire</span></div><div class="bus-desc">Trained wine tour chauffeurs, winery recs, large fleet.</div><div class="bus-price">Hourly rates · ⚠️ Prom season surcharge Apr–May</div></div>
+  <div class="bus"><div class="bus-top"><span class="bus-name">Presidential Limo</span></div><div class="bus-desc">Distance-based transparent pricing, 20–40 passenger buses.</div><div class="bus-price">Distance-based · Request quote</div></div>
+
+  <div class="callout purple">
+    <span class="callout-icon">💜</span>
+    <div><strong>Our pick:</strong> Cork & Keg or Spirited Tours — they handle winery reservations and routing, which is exactly what you want. <strong>Book ASAP</strong>, April is prom season!</div>
+  </div>
+</div>
+
+<!-- ===== PICNIC ===== -->
+<div class="section" id="picnic">
+  <div class="sec-header">
+    <h2 class="sec-title">Picnic Plan</h2>
+    <p class="sec-sub">Trader Joe's run + cooler on the bus. Eat at Three Fox's meadow.</p>
+  </div>
+  <div class="card">
+    <h3 class="picnic-cat">🧀 Cheese & Charcuterie</h3>
+    <ul class="picnic-list"><li data-icon="🧀">Assorted cheese (brie, gouda, manchego)</li><li data-icon="🥩">Prosciutto, salami, sopressata</li><li data-icon="🥖">Crackers and baguette slices</li></ul>
+    <h3 class="picnic-cat">🥗 Snacks & Sides</h3>
+    <ul class="picnic-list"><li data-icon="🫒">Hummus and pita chips</li><li data-icon="🥜">Mixed nuts and dried fruit</li><li data-icon="🍇">Fresh fruit (grapes, strawberries, apple slices)</li><li data-icon="🍫">Dark chocolate</li></ul>
+    <h3 class="picnic-cat">🥂 Drinks</h3>
+    <ul class="picnic-list"><li data-icon="💧">Water bottles (plenty!)</li><li data-icon="✨">Sparkling water</li><li data-icon="🍷">Wine for the bus ride</li></ul>
+    <h3 class="picnic-cat">🧺 Supplies</h3>
+    <ul class="picnic-list"><li data-icon="❄️">Large cooler with ice</li><li data-icon="🍽️">Napkins, plates, utensils</li><li data-icon="🔪">Cutting board and knife</li><li data-icon="🗑️">Trash bags</li></ul>
+  </div>
+  <div class="callout purple">
+    <span class="callout-icon">🌿</span>
+    <div><strong>Picnic spot:</strong> Three Fox has meadow areas along Crooked Run Creek — perfect for spreading out with 10–18 people.</div>
+  </div>
+</div>
+
+<!-- ===== CHECKLIST ===== -->
+<div class="section" id="checklist">
+  <div class="sec-header">
+    <h2 class="sec-title">Checklist</h2>
+    <p class="sec-sub">Tap to check off. Your progress saves automatically.</p>
+  </div>
+
+  <h3 class="ck-phase">📢 Book ASAP (6+ Weeks Out)</h3>
+  <div id="ck-asap"></div>
+  <h3 class="ck-phase">📋 4 Weeks Out</h3>
+  <div id="ck-4wk"></div>
+  <h3 class="ck-phase">📦 Week Of</h3>
+  <div id="ck-1wk"></div>
+  <h3 class="ck-phase">🎉 Day Of</h3>
+  <div id="ck-day"></div>
+</div>
+
+</div><!-- /main -->
+
+<div class="footer">
+  <span class="footer-emoji">🍷✨</span>
+  <div class="footer-text">Wine Bus · April 11, 2026 · Virginia Wine Country</div>
+</div>
+
+<script>
+// TABS
+document.querySelectorAll('.nav-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+    window.scrollTo({top:document.querySelector('.main').offsetTop-60,behavior:'smooth'});
+  });
+});
+
+// CHECKLIST
+const ckData={
+  asap:[
+    {t:'Send save-the-date poll to the group',n:'Yes / No / Maybe'},
+    {t:'Contact bus companies for quotes',n:'Start with Cork & Keg or Spirited Tours'},
+    {t:'Confirm bus has bathroom, BYO alcohol, stand-up seating'},
+    {t:'Tell Aisha Pitman the date'},
+  ],
+  '4wk':[
+    {t:'Finalize headcount from poll'},
+    {t:'Book the bus'},
+    {t:'Call Three Fox Events Team',n:'(703) 594-6136 — group of 10–18'},
+    {t:'Call Breaux Vineyards',n:'(540) 668-6299 — group seating'},
+    {t:'Call optional third winery re: bus-friendliness'},
+  ],
+  '1wk':[
+    {t:'Confirm all winery reservations'},
+    {t:'Confirm bus pickup time & address'},
+    {t:"Trader Joe's run — pack the cooler"},
+    {t:'Share itinerary with the group'},
+  ],
+  day:[
+    {t:'Load cooler onto bus'},
+    {t:'Depart 1002 Girard St NW by 9 AM'},
+    {t:'Have the best day ever 🥂'},
+  ],
+};
+Object.entries(ckData).forEach(([key,items])=>{
+  const c=document.getElementById('ck-'+key);
+  items.forEach((item,i)=>{
+    const id='wb-'+key+'-'+i;
+    let checked=false;
+    try{checked=localStorage.getItem(id)==='1';}catch(e){}
+    const d=document.createElement('div');
+    d.className='ck-item'+(checked?' done':'');
+    d.innerHTML=`<input type="checkbox" id="${id}" ${checked?'checked':''}><label for="${id}" style="cursor:pointer"><div class="ck-text">${item.t}</div>${item.n?'<div class="ck-note">'+item.n+'</div>':''}</label>`;
+    const cb=d.querySelector('input');
+    cb.addEventListener('change',()=>{
+      try{localStorage.setItem(id,cb.checked?'1':'0');}catch(e){}
+      d.classList.toggle('done',cb.checked);
+    });
+    d.addEventListener('click',e=>{if(e.target.tagName!=='INPUT'){cb.checked=!cb.checked;cb.dispatchEvent(new Event('change'));}});
+    c.appendChild(d);
+  });
+});
+</script>
+</body>
+</html>
